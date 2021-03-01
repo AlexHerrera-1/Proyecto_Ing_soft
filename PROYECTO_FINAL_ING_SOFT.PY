@@ -2,6 +2,7 @@
 from tkinter import *
 import os
 
+
 #Creacion de ventana.
 def ventana_inicio():
     global ventana_principal
@@ -102,7 +103,7 @@ def verifica_login():
 
         #leer el archivo de nombres y contraseñas
         verifica = archivo1.read().splitlines() 
-        #verificar_clave_exitosa
+        #verificar_clave_exitosa_ventana_menu
         if clave1 in verifica:
             menu_calculos() 
         #si no se eencuentra en el registro
@@ -114,22 +115,9 @@ def verifica_login():
         no_usuario() 
 
 
-# Ventana de login exito
+# Ventana de menu
  
-def menu_calculos():
-    global menu_principal
-    pestas_color="DarkGrey"
-    menu_principal=Tk()
-    menu_principal.geometry("600x300")#DIMENSIONES DE LA VENTANA
-    menu_principal.title("Menu")#TITULO DE LA VENTANA
-    Label(text="Escoja su opción", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()#ETIQUETA CON TEXTO
-    Label(text="").pack()
-    Button(text="Poligonal", height="2", width="30", bg=pestas_color, command="poligonal").pack() #BOTÓN "Acceder"
-    Label(text="").pack()
-    Button(text="Nivelacio", height="2", width="30", bg=pestas_color, command="Nivelacion").pack() #BOTÓN "Registrarse".
-    Label(text="").pack()
-    menu_principal.mainloop()
- 
+
 #Ventana emergente clave incorrecto.
  
 def no_clave():
@@ -142,6 +130,14 @@ def no_clave():
     Button(ventana_no_clave, text="OK", command=borrar_no_clave).pack() 
  
 #Ventana Usuaario Incorrecto.
+def menu_calculos():
+    global ventana_menu
+    ventana_menu = Toplevel(ventana_login)
+    ventana_menu.title("MENU DE PRINCIPAL")
+    ventana_menu.geometry("200x200")
+    Label(ventana_menu, text="Menu").pack()
+    Button(ventana_menu, text="POLIGONAL", command=Poli_opcion).pack()
+    Button(ventana_menu, text="NIVELACIOL", command=Poli_opcion).pack()
  
 def no_usuario():
     global ventana_no_usuario
@@ -153,8 +149,14 @@ def no_usuario():
     Button(ventana_no_usuario, text="OK", command=borrar_no_usuario).pack() 
 
 
-def borrar_exito_login():
-    ventana_exito.destroy()
+def Poli_opcion():
+    global ventana_Poligonal_opciones
+    ventana_Poligonal_opciones = Toplevel(ventana_login)
+    ventana_Poligonal_opciones.title("MENU DE PRINCIPAL")
+    ventana_Poligonal_opciones.geometry("200x200")
+    Label(ventana_Poligonal_opciones, text="Menu").pack()
+    Button(ventana_Poligonal_opciones, text="POLIGONAL", command=Poli_opcion).pack()
+    Button(ventana_Poligonal_opciones, text="NIVELACIOL", command=Poli_opcion).pack()
  
  
 def borrar_no_clave():
@@ -191,38 +193,3 @@ ventana_inicio()  #EJECUCIÓN DE LA VENTANA DE INICIO.
 
 
 
-def ventana_menu():
-    global ventana_menu_inicio
-    pestas_color="DarkGrey"
-    vantana_menu_inicio =Tk()
-    #creacion de dimenciones
-    vantana_menu_inicio.geometry("300x250")
-    #titulo de ventana
-    vantana_menu_inicio.title("MENU ")
-    Label(text="Escoja su opción", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()
-    Label(text="").pack()
-    #boton acceder
-    Button(text="Poligonal", height="2", width="30", bg=pestas_color, command=Poligonal).pack() 
-    Label(text="").pack()
-    #boton registrarse
-    Button(text="Nivelacion", height="2", width="30", bg=pestas_color, command="Calculo_de_nivelacion").pack() 
-    Label(text="").pack()
-    vantana_menu_inicio.mainloop()
-
-def Poligonal():
-    global ventana_poligonal
-    ventana_poligonal = Toplevel(ventana_menu)
-    ventana_poligonal.title("Registro")
-    ventana_poligonal.geometry("300x250")
- 
-    Button(ventana_poligonal, text="Poligonal", width=10, height=1, bg="LightGreen", command = "Poligonal_Opcion").pack() #BOTÓN "Registrarse"
-
-ventana_menu()
-
-
-
-    
-
-
-
-#crear login
