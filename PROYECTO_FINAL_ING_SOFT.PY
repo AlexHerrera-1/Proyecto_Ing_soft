@@ -115,6 +115,7 @@ def verifica_login():
         no_usuario() 
 
 
+
 # Ventana de menu
  
 
@@ -129,7 +130,7 @@ def no_clave():
     #borrar clave de ventana
     Button(ventana_no_clave, text="OK", command=borrar_no_clave).pack() 
  
-#Ventana Usuaario Incorrecto.
+#Ventana menu de calculo.
 def menu_calculos():
     global ventana_menu
     ventana_menu = Toplevel(ventana_login)
@@ -148,7 +149,7 @@ def no_usuario():
     #borrar usuario de ventana
     Button(ventana_no_usuario, text="OK", command=borrar_no_usuario).pack() 
 
-
+#ventana Opcion de ajusted de polugonales
 def Poligonales_opcion():
     global ventana_Poligonal_opciones
     ventana_Poligonal_opciones = Toplevel(ventana_login)
@@ -166,7 +167,7 @@ def ajuste_transito():
     k="h"
 def ajuste_crandall():
     l="Nose"
-
+#ventana ajuste de nivelacion
 def Nivelaciones_opcion():
     global ventana_Nivelaciones_opciones
     ventana_Nivelaciones_opciones = Toplevel(ventana_login)
@@ -191,6 +192,8 @@ def borrar_no_clave():
  
 def borrar_no_usuario():
     ventana_no_usuario.destroy()
+
+
 
 #Registro de usuario
  
