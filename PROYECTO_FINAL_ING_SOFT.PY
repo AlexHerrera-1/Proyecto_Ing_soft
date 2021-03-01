@@ -135,9 +135,9 @@ def menu_calculos():
     ventana_menu = Toplevel(ventana_login)
     ventana_menu.title("MENU DE PRINCIPAL")
     ventana_menu.geometry("200x200")
-    Label(ventana_menu, text="Menu").pack()
-    Button(ventana_menu, text="POLIGONAL", command=Poli_opcion).pack()
-    Button(ventana_menu, text="NIVELACIOL", command=Poli_opcion).pack()
+    Label(ventana_menu, text="MENU DE OPCIONES").pack()
+    Button(ventana_menu, text="POLIGONAL", command=Poligonales_opcion).pack()
+    Button(ventana_menu, text="NIVELACIOL", command=Nivelaciones_opcion).pack()
  
 def no_usuario():
     global ventana_no_usuario
@@ -149,16 +149,42 @@ def no_usuario():
     Button(ventana_no_usuario, text="OK", command=borrar_no_usuario).pack() 
 
 
-def Poli_opcion():
+def Poligonales_opcion():
     global ventana_Poligonal_opciones
     ventana_Poligonal_opciones = Toplevel(ventana_login)
-    ventana_Poligonal_opciones.title("MENU DE PRINCIPAL")
-    ventana_Poligonal_opciones.geometry("200x200")
-    Label(ventana_Poligonal_opciones, text="Menu").pack()
-    Button(ventana_Poligonal_opciones, text="POLIGONAL", command=Poli_opcion).pack()
-    Button(ventana_Poligonal_opciones, text="NIVELACIOL", command=Poli_opcion).pack()
+    ventana_Poligonal_opciones.title("METODOS DE AJUSTE DE POLIGONALES")
+    ventana_Poligonal_opciones.geometry("300x200")
+    Label(ventana_Poligonal_opciones, text="AJUSTES MANEJADOS EN EL PROGRAMA").pack()
+    Button(ventana_Poligonal_opciones, text="BRUJULA", command=ajuste_brujula).pack()
+    Button(ventana_Poligonal_opciones, text="TRANSITO", command=ajuste_transito).pack()
+    Button(ventana_Poligonal_opciones, text="CRANDALL", command=ajuste_crandall).pack()
  
+def ajuste_brujula():
+    j="nose"
+
+def ajuste_transito():
+    k="h"
+def ajuste_crandall():
+    l="Nose"
+
+def Nivelaciones_opcion():
+    global ventana_Nivelaciones_opciones
+    ventana_Nivelaciones_opciones = Toplevel(ventana_login)
+    ventana_Nivelaciones_opciones.title("METODOS DE AJUSTE DE NIVELACIONES")
+    ventana_Nivelaciones_opciones.geometry("300x200")
+    Label(ventana_Nivelaciones_opciones, text="AJUSTES MANEJADOS EN EL PROGRAMA").pack()
+    Button(ventana_Nivelaciones_opciones, text="RELATIVO A NUMERO DE CAMBIOS", command=ajuste_por_cambios).pack()
+    Button(ventana_Nivelaciones_opciones, text="RELATIVO A DISTANCIA NIVELADA", command=ajuste_por_distancias).pack()
+
+def ajuste_por_cambios():
+    ñ="nose"
+
+def ajuste_por_distancias():
+    g="Nose"
  
+
+
+
 def borrar_no_clave():
     ventana_no_clave.destroy()
  
