@@ -134,10 +134,12 @@ def no_clave():
 def menu_calculos():
     global ventana_menu
     ventana_menu = Toplevel(ventana_login)
-    ventana_menu.title("MENU DE PRINCIPAL")
+    ventana_menu.title("MENU DE LEVANTAMIENTO")
     ventana_menu.geometry("200x200")
-    Label(ventana_menu, text="MENU DE OPCIONES").pack()
+    Label(ventana_menu, text="TIPO DE LEVANTAMIENTO").pack()
+    Label(ventana_menu, text= "").pack()
     Button(ventana_menu, text="POLIGONAL", command= opcion_equipo).pack()
+    Label(ventana_menu, text= "").pack()
     Button(ventana_menu, text="NIVELACIOL", command=Nivelaciones_opcion).pack()
  
 def no_usuario():
@@ -149,35 +151,68 @@ def no_usuario():
     #borrar usuario de ventana
     Button(ventana_no_usuario, text="OK", command=borrar_no_usuario).pack() 
 
-#Aconsejar al usuario
+#Aconsejar al usuario por equipo
 def opcion_equipo():
     global ventana_opcion_equipo
     ventana_opcion_equipo = Toplevel(ventana_login)
     ventana_opcion_equipo.title("EQUIPOS")
-    ventana_opcion_equipo.geometry("600x200")
+    ventana_opcion_equipo.geometry("400x200")
     Label(ventana_opcion_equipo, text="ESCOJA EN EQUIPO CON EL QUE REALIZO LA POLIGONAL").pack()
-
+    Label(ventana_opcion_equipo, text="").pack()
     Button(ventana_opcion_equipo, text="ESTACION TOTAL", command=consejo_estacion).pack()
+    Label(ventana_opcion_equipo, text="").pack()
+    Button(ventana_opcion_equipo, text="TEODOLITO", command=consejo_teodolito).pack()
+    Label(ventana_opcion_equipo, text="").pack()
+    Button(ventana_opcion_equipo, text="TRANSITO", command=consejo_transito).pack()
 
-
-    Button(ventana_opcion_equipo, text="TEODOLITO", command=ajuste_transito).pack()
-    
-
-    Button(ventana_opcion_equipo, text="TRANSITO", command=ajuste_crandall).pack()
-
+#ACONSEJAR Y AJUSTAR POR CRANDAL 
 def consejo_estacion():
     global ventana_consejo_estacion
     ventana_consejo_estacion = Toplevel(ventana_login)
     ventana_consejo_estacion.title("EL MEJOR AJUSTE QUE SE PUEDE REALIZAR")
     ventana_consejo_estacion.geometry("500x200")
     Label(ventana_consejo_estacion, text="EL MEJOR METODO DE AJUSTE ").pack()
+    Label(ventana_consejo_estacion, text=" ").pack()
     Label(ventana_consejo_estacion, text="QUE SE PUEDE RALIZAR ES CRANDALL").pack()
+    Label(ventana_consejo_estacion, text=" ").pack()
     Label(ventana_consejo_estacion, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
-
-    Button(ventana_consejo_estacion, text="AJUSTE POR CRANDALL", command=ajuste_crandall).pack()
-
-
+    Label(ventana_consejo_estacion, text=" ").pack()
+    Button(ventana_consejo_estacion, text="AJUSTE POR METODO DE CRANDALL", command=ajuste_crandall).pack()
+    Label(ventana_consejo_estacion, text=" ").pack()
     Button(ventana_consejo_estacion, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
+
+
+#ACONSEJAR Y AJUSTAR POR METODO DE BRUJULA
+def consejo_teodolito():
+    global ventana_consejo_teodolito
+    ventana_consejo_teodolito = Toplevel(ventana_login)
+    ventana_consejo_teodolito.title("EL MEJOR AJUSTE QUE SE PUEDE REALIZAR")
+    ventana_consejo_teodolito.geometry("500x200")
+    Label(ventana_consejo_teodolito, text="EL MEJOR METODO DE AJUSTE ").pack()
+    Label(ventana_consejo_teodolito, text=" ").pack()
+    Label(ventana_consejo_teodolito, text="QUE SE PUEDE RALIZAR ES BRUJULA").pack()
+    Label(ventana_consejo_teodolito, text=" ").pack()
+    Label(ventana_consejo_teodolito, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
+    Label(ventana_consejo_teodolito, text=" ").pack()
+    Button(ventana_consejo_teodolito, text="AJUSTE POR METODO DE BRUJULA", command=ajuste_brujula).pack()
+    Label(ventana_consejo_teodolito, text=" ").pack()
+    Button(ventana_consejo_teodolito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
+
+#CONSEJO Y AJUSTE POR TRANSITO
+def consejo_transito():
+    global ventana_consejo_transito
+    ventana_consejo_transito = Toplevel(ventana_login)
+    ventana_consejo_transito.title("EL MEJOR AJUSTE QUE SE PUEDE REALIZAR")
+    ventana_consejo_transito.geometry("500x200")
+    Label(ventana_consejo_transito, text="EL MEJOR METODO DE AJUSTE ").pack()
+    Label(ventana_consejo_transito, text=" ").pack()
+    Label(ventana_consejo_transito, text="QUE SE PUEDE RALIZAR ES TRANSITO").pack()
+    Label(ventana_consejo_transito, text=" ").pack()
+    Label(ventana_consejo_transito, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
+    Label(ventana_consejo_transito, text=" ").pack()
+    Button(ventana_consejo_transito, text="AJUSTE POR METODO DE TRANSITO", command=ajuste_transito).pack()
+    Label(ventana_consejo_transito, text=" ").pack()
+    Button(ventana_consejo_transito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
 
 
 def Poligonales_opcion():
@@ -186,8 +221,11 @@ def Poligonales_opcion():
     ventana_Poligonal_opciones.title("METODOS DE AJUSTE DE POLIGONALES")
     ventana_Poligonal_opciones.geometry("300x200")
     Label(ventana_Poligonal_opciones, text="AJUSTES MANEJADOS EN EL PROGRAMA").pack()
+    Label(ventana_Poligonal_opciones,text= " ").pack()
     Button(ventana_Poligonal_opciones, text="BRUJULA", command=ajuste_brujula).pack()
+    Label(ventana_Poligonal_opciones,text= " ").pack()
     Button(ventana_Poligonal_opciones, text="TRANSITO", command=ajuste_transito).pack()
+    Label(ventana_Poligonal_opciones,text= " ").pack()
     Button(ventana_Poligonal_opciones, text="CRANDALL", command=ajuste_crandall).pack()
  
 def ajuste_brujula():
