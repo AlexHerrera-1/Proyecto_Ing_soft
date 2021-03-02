@@ -137,7 +137,7 @@ def menu_calculos():
     ventana_menu.title("MENU DE PRINCIPAL")
     ventana_menu.geometry("200x200")
     Label(ventana_menu, text="MENU DE OPCIONES").pack()
-    Button(ventana_menu, text="POLIGONAL", command=Poligonales_opcion).pack()
+    Button(ventana_menu, text="POLIGONAL", command= opcion_equipo).pack()
     Button(ventana_menu, text="NIVELACIOL", command=Nivelaciones_opcion).pack()
  
 def no_usuario():
@@ -149,7 +149,37 @@ def no_usuario():
     #borrar usuario de ventana
     Button(ventana_no_usuario, text="OK", command=borrar_no_usuario).pack() 
 
-#ventana Opcion de ajusted de polugonales
+#Aconsejar al usuario
+def opcion_equipo():
+    global ventana_opcion_equipo
+    ventana_opcion_equipo = Toplevel(ventana_login)
+    ventana_opcion_equipo.title("EQUIPOS")
+    ventana_opcion_equipo.geometry("600x200")
+    Label(ventana_opcion_equipo, text="ESCOJA EN EQUIPO CON EL QUE REALIZO LA POLIGONAL").pack()
+
+    Button(ventana_opcion_equipo, text="ESTACION TOTAL", command=consejo_estacion).pack()
+
+
+    Button(ventana_opcion_equipo, text="TEODOLITO", command=ajuste_transito).pack()
+    
+
+    Button(ventana_opcion_equipo, text="TRANSITO", command=ajuste_crandall).pack()
+
+def consejo_estacion():
+    global ventana_consejo_estacion
+    ventana_consejo_estacion = Toplevel(ventana_login)
+    ventana_consejo_estacion.title("EL MEJOR AJUSTE QUE SE PUEDE REALIZAR")
+    ventana_consejo_estacion.geometry("500x200")
+    Label(ventana_consejo_estacion, text="EL MEJOR METODO DE AJUSTE ").pack()
+    Label(ventana_consejo_estacion, text="QUE SE PUEDE RALIZAR ES CRANDALL").pack()
+    Label(ventana_consejo_estacion, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
+
+    Button(ventana_consejo_estacion, text="AJUSTE POR CRANDALL", command=ajuste_crandall).pack()
+
+
+    Button(ventana_consejo_estacion, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
+
+
 def Poligonales_opcion():
     global ventana_Poligonal_opciones
     ventana_Poligonal_opciones = Toplevel(ventana_login)
