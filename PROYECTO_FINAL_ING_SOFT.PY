@@ -11,14 +11,14 @@ def ventana_inicio():
     #creacion de dimenciones
     ventana_principal.geometry("300x250")
     #titulo de ventana
-    ventana_principal.title("Login Usuario ")
-    Label(text="Escoja su opción", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()
+    ventana_principal.title("LOGIN USUARIO")
+    Label(text="ESCOJA SU OPCION", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()
     Label(text="").pack()
     #boton acceder
-    Button(text="Acceder", height="2", width="30", bg=pestas_color, command=login).pack() 
+    Button(text="ACCEDER", height="2", width="30", bg=pestas_color, command=login).pack() 
     Label(text="").pack()
     #boton registrarse
-    Button(text="Registrarse", height="2", width="30", bg=pestas_color, command=registro).pack() 
+    Button(text="REGISTRARSE", height="2", width="30", bg=pestas_color, command=registro).pack() 
     Label(text="").pack()
     ventana_principal.mainloop()
     
@@ -28,7 +28,7 @@ def ventana_inicio():
 def registro():
     global ventana_registro
     ventana_registro = Toplevel(ventana_principal)
-    ventana_registro.title("Registro")
+    ventana_registro.title("REGISTRO")
     ventana_registro.geometry("300x250")
  
     global nombre_usuario
@@ -40,20 +40,20 @@ def registro():
     #clave de usuario
     clave = StringVar() 
  
-    Label(ventana_registro, text="Introduzca datos", bg="LightGreen").pack()
+    Label(ventana_registro, text="INTRODUSCA SUS DATOS", bg="LightGreen").pack()
     Label(ventana_registro, text="").pack()
-    etiqueta_nombre = Label(ventana_registro, text="Nombre de usuario * ")
+    etiqueta_nombre = Label(ventana_registro, text="NOMBRE DE USUARIO * ")
     etiqueta_nombre.pack()
     #introdusca el nombre de usuario
     entrada_nombre = Entry(ventana_registro, textvariable=nombre_usuario) 
     entrada_nombre.pack()
-    etiqueta_clave = Label(ventana_registro, text="Contraseña * ")
+    etiqueta_clave = Label(ventana_registro, text="CONTRASEÑA * ")
     etiqueta_clave.pack()
     #introdusca la contraseña
     entrada_clave = Entry(ventana_registro, textvariable=clave, show='*') 
     entrada_clave.pack()
     Label(ventana_registro, text="").pack()
-    Button(ventana_registro, text="Registrarse", width=10, height=1, bg="LightGreen", command = registro_usuario).pack() #BOTÓN "Registrarse"
+    Button(ventana_registro, text="REGISTRESE", width=10, height=1, bg="LightGreen", command = registro_usuario).pack() #BOTÓN "Registrarse"
 
 #ventana login
 
@@ -62,7 +62,7 @@ def login():
     ventana_login = Toplevel(ventana_principal)
     ventana_login.title("USUARIO REGISTRADO")
     ventana_login.geometry("300x250")
-    Label(ventana_login, text="Introduzca nombre de usuario y contraseña").pack()
+    Label(ventana_login, text="INTRODUSCA NOMBRE DE USUARIO Y CONTRASEÑA").pack()
     Label(ventana_login, text="").pack()
  
     global verifica_usuario
@@ -140,7 +140,7 @@ def menu_calculos():
     Label(ventana_menu, text= "").pack()
     Button(ventana_menu, text="POLIGONAL", command= opcion_equipo).pack()
     Label(ventana_menu, text= "").pack()
-    Button(ventana_menu, text="NIVELACIOL", command=Nivelaciones_opcion).pack()
+    Button(ventana_menu, text="NIVELACIOL", command=opcion_nivelacion).pack()
  
 def no_usuario():
     global ventana_no_usuario
@@ -213,6 +213,17 @@ def consejo_transito():
     Button(ventana_consejo_transito, text="AJUSTE POR METODO DE TRANSITO", command=ajuste_transito).pack()
     Label(ventana_consejo_transito, text=" ").pack()
     Button(ventana_consejo_transito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
+#OPCIONES DE NIVELACION
+def opcion_nivelacion():
+    global ventana_opcion_nivelacion
+    ventana_opcion_nivelacion = Toplevel(ventana_login)
+    ventana_opcion_nivelacion.title("QUE DATOS TIENE")
+    ventana_opcion_nivelacion.geometry("400x200")
+    Label(ventana_opcion_nivelacion, text="QUE DATOS DE ESTOS TIENE EN SU NIVELACION").pack()
+    Label(ventana_opcion_nivelacion, text="").pack()
+    Button(ventana_opcion_nivelacion, text="DISTANCIAS", command=consejo_estacion).pack()
+    Label(ventana_opcion_nivelacion, text="").pack()
+    Button(ventana_opcion_nivelacion, text="CAMBIOS", command=consejo_teodolito).pack()
 
 
 def Poligonales_opcion():
