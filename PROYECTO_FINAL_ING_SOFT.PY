@@ -84,6 +84,9 @@ def login():
     Label(ventana_login, text="").pack()
     Button(ventana_login, text="ACCEDER", width=10, height=1, command = verifica_login).pack()
 
+
+
+
 #verificacion de login
 
 def verifica_login():
@@ -112,7 +115,9 @@ def verifica_login():
             no_clave() 
     else:
         #no usuario registrado
-        no_usuario() 
+        no_usuario()
+
+        
 
 
 
@@ -141,7 +146,8 @@ def menu_calculos():
     Button(ventana_menu, text="POLIGONAL", command= opcion_equipo).pack()
     Label(ventana_menu, text= "").pack()
     Button(ventana_menu, text="NIVELACIOL", command=opcion_nivelacion).pack()
- 
+
+
 def no_usuario():
     global ventana_no_usuario
     ventana_no_usuario = Toplevel(ventana_login)
@@ -225,7 +231,7 @@ def opcion_nivelacion():
     Label(ventana_opcion_nivelacion, text="").pack()
     Button(ventana_opcion_nivelacion, text="DISTANCIAS", command=consejo_distancia).pack()
     Label(ventana_opcion_nivelacion, text="").pack()
-    Button(ventana_opcion_nivelacion, text="CAMBIOS", command=consejo_cambios).pack()
+    Button(ventana_opcion_nivelacion, text="NUMERO DE CAMBIOS", command=consejo_cambios).pack()
 
 
 #CONSEJO MEJOR METODO Y AJUSTE NIVELACION DISTANCIAS
@@ -314,6 +320,7 @@ def borrar_no_clave():
  
 def borrar_no_usuario():
     ventana_no_usuario.destroy()
+
 
 
 
