@@ -60,7 +60,7 @@ def registro():
 def login():
     global ventana_login
     ventana_login = Toplevel(ventana_principal)
-    ventana_login.title("Usuario Registrado")
+    ventana_login.title("USUARIO REGISTRADO")
     ventana_login.geometry("300x250")
     Label(ventana_login, text="Introduzca nombre de usuario y contraseña").pack()
     Label(ventana_login, text="").pack()
@@ -74,15 +74,15 @@ def login():
     global entrada_login_usuario
     global entrada_login_clave
  
-    Label(ventana_login, text="Nombre usuario * ").pack()
+    Label(ventana_login, text="NOMBRE USUARIO * ").pack()
     entrada_login_usuario = Entry(ventana_login, textvariable=verifica_usuario)
     entrada_login_usuario.pack()
     Label(ventana_login, text="").pack()
-    Label(ventana_login, text="Contraseña * ").pack()
+    Label(ventana_login, text="CONTRASEÑA * ").pack()
     entrada_login_clave = Entry(ventana_login, textvariable=verifica_clave, show= '*')
     entrada_login_clave.pack()
     Label(ventana_login, text="").pack()
-    Button(ventana_login, text="Acceder", width=10, height=1, command = verifica_login).pack()
+    Button(ventana_login, text="ACCEDER", width=10, height=1, command = verifica_login).pack()
 
 #verificacion de login
 
@@ -135,7 +135,7 @@ def menu_calculos():
     global ventana_menu
     ventana_menu = Toplevel(ventana_login)
     ventana_menu.title("MENU DE LEVANTAMIENTO")
-    ventana_menu.geometry("200x200")
+    ventana_menu.geometry("400x200")
     Label(ventana_menu, text="TIPO DE LEVANTAMIENTO").pack()
     Label(ventana_menu, text= "").pack()
     Button(ventana_menu, text="POLIGONAL", command= opcion_equipo).pack()
@@ -157,7 +157,7 @@ def opcion_equipo():
     ventana_opcion_equipo = Toplevel(ventana_login)
     ventana_opcion_equipo.title("EQUIPOS")
     ventana_opcion_equipo.geometry("400x200")
-    Label(ventana_opcion_equipo, text="ESCOJA EN EQUIPO CON EL QUE REALIZO LA POLIGONAL").pack()
+    Label(ventana_opcion_equipo, text="ESCOJA EL EQUIPO CON EL QUE REALIZO LA POLIGONAL").pack()
     Label(ventana_opcion_equipo, text="").pack()
     Button(ventana_opcion_equipo, text="ESTACION TOTAL", command=consejo_estacion).pack()
     Label(ventana_opcion_equipo, text="").pack()
