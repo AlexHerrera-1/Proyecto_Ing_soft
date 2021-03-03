@@ -213,6 +213,8 @@ def consejo_transito():
     Button(ventana_consejo_transito, text="AJUSTE POR METODO DE TRANSITO", command=ajuste_transito).pack()
     Label(ventana_consejo_transito, text=" ").pack()
     Button(ventana_consejo_transito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
+
+
 #OPCIONES DE NIVELACION
 def opcion_nivelacion():
     global ventana_opcion_nivelacion
@@ -223,10 +225,10 @@ def opcion_nivelacion():
     Label(ventana_opcion_nivelacion, text="").pack()
     Button(ventana_opcion_nivelacion, text="DISTANCIAS", command=consejo_distancia).pack()
     Label(ventana_opcion_nivelacion, text="").pack()
-    Button(ventana_opcion_nivelacion, text="CAMBIOS", command=consejo_teodolito).pack()
+    Button(ventana_opcion_nivelacion, text="CAMBIOS", command=consejo_cambios).pack()
 
 
-#CONSEJO MEJOR METODO Y AJUSTE
+#CONSEJO MEJOR METODO Y AJUSTE NIVELACION DISTANCIAS
 def consejo_distancia():
     global ventana_consejo_distancia
     ventana_consejo_distancia = Toplevel(ventana_login)
@@ -242,9 +244,25 @@ def consejo_distancia():
     Label(ventana_consejo_distancia, text=" ").pack()
     Button(ventana_consejo_distancia, text="DESEO OTRO AJUSTE", command=Nivelaciones_opcion).pack()
 
+#CONSEJO MEJOR METODO Y AJUSTE NIVELACION CAMBIOS
+def consejo_cambios():
+    global ventana_consejo_cambios
+    ventana_consejo_cambios = Toplevel(ventana_login)
+    ventana_consejo_cambios.title("EL MEJOR AJUSTE QUE SE PUEDE REALIZAR")
+    ventana_consejo_cambios.geometry("500x200")
+    Label(ventana_consejo_cambios, text="EL MEJOR METODO DE AJUSTE ").pack()
+    Label(ventana_consejo_cambios, text=" ").pack()
+    Label(ventana_consejo_cambios, text="QUE SE PUEDE RALIZAR ES").pack()
+    Label(ventana_consejo_cambios, text=" ").pack()
+    Label(ventana_consejo_cambios, text="RELATIVO A LOS CAMBIOS").pack()
+    Label(ventana_consejo_cambios, text=" ").pack()
+    Button(ventana_consejo_cambios, text="AJUSTE POR METODO DE CAMBIOS", command=ajuste_por_cambios).pack()
+    Label(ventana_consejo_cambios, text=" ").pack()
+    Button(ventana_consejo_cambios, text="DESEO OTRO AJUSTE", command=Nivelaciones_opcion).pack()
 
 
 
+#OPCIONES DE AJUSTE DE POLIGONAL
 def Poligonales_opcion():
     global ventana_Poligonal_opciones
     ventana_Poligonal_opciones = Toplevel(ventana_login)
@@ -266,14 +284,19 @@ def ajuste_transito():
     k="h"
 def ajuste_crandall():
     l="Nose"
+
+
 #ventana ajuste de nivelacion
 def Nivelaciones_opcion():
     global ventana_Nivelaciones_opciones
     ventana_Nivelaciones_opciones = Toplevel(ventana_login)
     ventana_Nivelaciones_opciones.title("METODOS DE AJUSTE DE NIVELACIONES")
     ventana_Nivelaciones_opciones.geometry("300x200")
+    Label(ventana_Nivelaciones_opciones, text= " ").pack()
     Label(ventana_Nivelaciones_opciones, text="AJUSTES MANEJADOS EN EL PROGRAMA").pack()
+    Label(ventana_Nivelaciones_opciones, text= " ").pack()
     Button(ventana_Nivelaciones_opciones, text="RELATIVO A NUMERO DE CAMBIOS", command=ajuste_por_cambios).pack()
+    Label(ventana_Nivelaciones_opciones, text= " ").pack()
     Button(ventana_Nivelaciones_opciones, text="RELATIVO A DISTANCIA NIVELADA", command=ajuste_por_distancias).pack()
 
 def ajuste_por_cambios():
