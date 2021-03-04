@@ -200,7 +200,7 @@ def consejo_teodolito():
     Label(ventana_consejo_teodolito, text=" ").pack()
     Label(ventana_consejo_teodolito, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
     Label(ventana_consejo_teodolito, text=" ").pack()
-    Button(ventana_consejo_teodolito, text="AJUSTE POR METODO DE BRUJULA", command=ajuste_brujula).pack()
+    Button(ventana_consejo_teodolito, text="AJUSTE POR METODO DE BRUJULA", command=Enrutar_archivo_brujula).pack()
     Label(ventana_consejo_teodolito, text=" ").pack()
     Button(ventana_consejo_teodolito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
 
@@ -276,11 +276,11 @@ def Poligonales_opcion():
     ventana_Poligonal_opciones.geometry("300x200")
     Label(ventana_Poligonal_opciones, text="AJUSTES MANEJADOS EN EL PROGRAMA").pack()
     Label(ventana_Poligonal_opciones,text= " ").pack()
-    Button(ventana_Poligonal_opciones, text="BRUJULA", command=ajuste_brujula).pack()
+    Button(ventana_Poligonal_opciones, text="BRUJULA", command=Enrutar_archivo_brujula).pack()
     Label(ventana_Poligonal_opciones,text= " ").pack()
-    Button(ventana_Poligonal_opciones, text="TRANSITO", command=ajuste_transito).pack()
+    Button(ventana_Poligonal_opciones, text="TRANSITO", command=Enrutar_archivo_transito).pack()
     Label(ventana_Poligonal_opciones,text= " ").pack()
-    Button(ventana_Poligonal_opciones, text="CRANDALL", command=ajuste_crandall).pack()
+    Button(ventana_Poligonal_opciones, text="CRANDALL", command=Enrutar_archivo_crandall).pack()
 
  
 def ajuste_brujula():
@@ -304,6 +304,61 @@ def Nivelaciones_opcion():
     Button(ventana_Nivelaciones_opciones, text="RELATIVO A NUMERO DE CAMBIOS", command=ajuste_por_cambios).pack()
     Label(ventana_Nivelaciones_opciones, text= " ").pack()
     Button(ventana_Nivelaciones_opciones, text="RELATIVO A DISTANCIA NIVELADA", command=ajuste_por_distancias).pack()
+
+def Enrutar_archivo_transito():
+    global ventana_Enrutar_archivo_transito
+    ventana_Enrutar_archivo_transito = Toplevel(ventana_principal)
+    ventana_Enrutar_archivo_transito.title("DIRECCION DE ARCHIVO")
+    ventana_Enrutar_archivo_transito.geometry("300x250")
+    Label(ventana_Enrutar_archivo_transito, text="INTRODUSCA LA RUTA DE SU ARCHIVO").pack()
+    Label(ventana_Enrutar_archivo_transito, text="").pack()
+
+    global Ruta_archivo_xlsx
+ 
+    Ruta_archivo_xlsx = StringVar()
+ 
+    global entrada_ruta
+
+    Label(ventana_Enrutar_archivo_transito, text="NOMBRE USUARIO * ").pack()
+
+    Label(ventana_Enrutar_archivo_transito, text="").pack()
+    Label(ventana_Enrutar_archivo_transito, text="RUTA ARCHIVO ").pack()
+    entrada_ruta = Entry(ventana_Enrutar_archivo_transito, textvariable=Ruta_archivo_xlsx )
+    entrada_ruta.pack()
+    Label(ventana_Enrutar_archivo_transito, text="").pack()
+    Button(ventana_Enrutar_archivo_transito, text="OK", width=10, height=1, command = Ruta_archivo).pack()
+
+
+
+def Enrutar_archivo_brujula():
+    global ventana_Enrutar_archivo_brujula
+    ventana_Enrutar_archivo_brujula = Toplevel(ventana_principal)
+    ventana_Enrutar_archivo_brujula.title("DIRECCION DE ARCHIVO")
+    ventana_Enrutar_archivo_brujula.geometry("300x250")
+    Label(ventana_Enrutar_archivo_brujula, text="INTRODUSCA LA RUTA DE SU ARCHIVO").pack()
+    Label(ventana_Enrutar_archivo_brujula, text="").pack()
+
+    global Ruta_archivo_xlsx
+ 
+    Ruta_archivo_xlsx = StringVar()
+ 
+    global entrada_ruta
+
+    Label(ventana_Enrutar_archivo_brujula, text="NOMBRE USUARIO * ").pack()
+
+    Label(ventana_Enrutar_archivo_brujula, text="").pack()
+    Label(ventana_Enrutar_archivo_brujula, text="RUTA ARCHIVO ").pack()
+    entrada_ruta = Entry(ventana_Enrutar_archivo_brujula, textvariable=Ruta_archivo_xlsx )
+    entrada_ruta.pack()
+    Label(ventana_Enrutar_archivo_brujula, text="").pack()
+    Button(ventana_Enrutar_archivo_brujula, text="OK", width=10, height=1, command = Ruta_archivo).pack()
+
+
+
+def Ruta_archivo ():
+    g="nose"
+
+#def ventana_enrute_archivo
 
 def ajuste_por_cambios():
     ñ="nose"
