@@ -305,6 +305,7 @@ def Nivelaciones_opcion():
     Label(ventana_Nivelaciones_opciones, text= " ").pack()
     Button(ventana_Nivelaciones_opciones, text="RELATIVO A DISTANCIA NIVELADA", command=ajuste_por_distancias).pack()
 
+#ENRUTAR ARCHIVO PARA AJUSTE TRANSITO
 def Enrutar_archivo_transito():
     global ventana_Enrutar_archivo_transito
     ventana_Enrutar_archivo_transito = Toplevel(ventana_principal)
@@ -324,10 +325,10 @@ def Enrutar_archivo_transito():
     entrada_ruta = Entry(ventana_Enrutar_archivo_transito, textvariable=Ruta_archivo_xlsx )
     entrada_ruta.pack()
     Label(ventana_Enrutar_archivo_transito, text="").pack()
-    Button(ventana_Enrutar_archivo_transito, text="OK", width=10, height=1, command = Ruta_archivo).pack()
+    Button(ventana_Enrutar_archivo_transito, text="OK", width=10, height=1, command = Ruta_archivo_transito).pack()
 
 
-
+#ENRUTAR ARCHIVO PARA AJUSTE POR BRUJULA
 def Enrutar_archivo_brujula():
     global ventana_Enrutar_archivo_brujula
     ventana_Enrutar_archivo_brujula = Toplevel(ventana_principal)
@@ -348,10 +349,10 @@ def Enrutar_archivo_brujula():
     entrada_ruta = Entry(ventana_Enrutar_archivo_brujula, textvariable=Ruta_archivo_xlsx )
     entrada_ruta.pack()
     Label(ventana_Enrutar_archivo_brujula, text="").pack()
-    Button(ventana_Enrutar_archivo_brujula, text="OK", width=10, height=1, command = Ruta_archivo).pack()
+    Button(ventana_Enrutar_archivo_brujula, text="OK", width=10, height=1, command = Ruta_archivo_brujula).pack()
 
 
-
+#ENRUTAR ARCHIVO PARA AJUSTE POR BRUJULA
 def Enrutar_archivo_crandall():
     global ventana_Enrutar_archivo_crandall
     ventana_Enrutar_archivo_crandall = Toplevel(ventana_principal)
@@ -371,18 +372,18 @@ def Enrutar_archivo_crandall():
     entrada_ruta = Entry(ventana_Enrutar_archivo_crandall, textvariable=Ruta_archivo_xlsx )
     entrada_ruta.pack()
     Label(ventana_Enrutar_archivo_crandall, text="").pack()
-    Button(ventana_Enrutar_archivo_crandall, text="OK", width=10, height=1, command = Ruta_archivo).pack()
+    Button(ventana_Enrutar_archivo_crandall, text="OK", width=10, height=1, command = Ruta_archivo_crandall).pack()
 
-def Ruta_archivo ():
-    g="nose"
 
 #def ventana_enrute_archivo
 
-def ajuste_por_cambios():
+def Ruta_archivo_brujula():
     ñ="nose"
 
-def ajuste_por_distancias():
+def Ruta_archivo_transito():
     g="Nose"
+def Ruta_archivo_crandall():
+    l="Nose"
  
 
 
