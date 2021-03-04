@@ -319,8 +319,6 @@ def Enrutar_archivo_transito():
  
     global entrada_ruta
 
-    Label(ventana_Enrutar_archivo_transito, text="NOMBRE USUARIO * ").pack()
-
     Label(ventana_Enrutar_archivo_transito, text="").pack()
     Label(ventana_Enrutar_archivo_transito, text="RUTA ARCHIVO ").pack()
     entrada_ruta = Entry(ventana_Enrutar_archivo_transito, textvariable=Ruta_archivo_xlsx )
@@ -344,7 +342,6 @@ def Enrutar_archivo_brujula():
  
     global entrada_ruta
 
-    Label(ventana_Enrutar_archivo_brujula, text="NOMBRE USUARIO * ").pack()
 
     Label(ventana_Enrutar_archivo_brujula, text="").pack()
     Label(ventana_Enrutar_archivo_brujula, text="RUTA ARCHIVO ").pack()
@@ -368,8 +365,6 @@ def Enrutar_archivo_crandall():
     Ruta_archivo_xlsx = StringVar()
  
     global entrada_ruta
-
-    Label(ventana_Enrutar_archivo_crandall, text="NOMBRE USUARIO * ").pack()
 
     Label(ventana_Enrutar_archivo_crandall, text="").pack()
     Label(ventana_Enrutar_archivo_crandall, text="RUTA ARCHIVO ").pack()
