@@ -183,7 +183,7 @@ def consejo_estacion():
     Label(ventana_consejo_estacion, text=" ").pack()
     Label(ventana_consejo_estacion, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
     Label(ventana_consejo_estacion, text=" ").pack()
-    Button(ventana_consejo_estacion, text="AJUSTE POR METODO DE CRANDALL", command=ajuste_crandall).pack()
+    Button(ventana_consejo_estacion, text="AJUSTE POR METODO DE CRANDALL", command=Enrutar_archivo_crandall).pack()
     Label(ventana_consejo_estacion, text=" ").pack()
     Button(ventana_consejo_estacion, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
 
@@ -216,7 +216,7 @@ def consejo_transito():
     Label(ventana_consejo_transito, text=" ").pack()
     Label(ventana_consejo_transito, text="POR EL EQUIPO CON EL QUE SE RALIZO").pack()
     Label(ventana_consejo_transito, text=" ").pack()
-    Button(ventana_consejo_transito, text="AJUSTE POR METODO DE TRANSITO", command=ajuste_transito).pack()
+    Button(ventana_consejo_transito, text="AJUSTE POR METODO DE TRANSITO", command=Enrutar_archivo_transito).pack()
     Label(ventana_consejo_transito, text=" ").pack()
     Button(ventana_consejo_transito, text="DESEO OTRO AJUSTE", command=Poligonales_opcion).pack()
 
@@ -354,6 +354,29 @@ def Enrutar_archivo_brujula():
     Button(ventana_Enrutar_archivo_brujula, text="OK", width=10, height=1, command = Ruta_archivo).pack()
 
 
+
+def Enrutar_archivo_crandall():
+    global ventana_Enrutar_archivo_crandall
+    ventana_Enrutar_archivo_crandall = Toplevel(ventana_principal)
+    ventana_Enrutar_archivo_crandall.title("DIRECCION DE ARCHIVO")
+    ventana_Enrutar_archivo_crandall.geometry("300x250")
+    Label(ventana_Enrutar_archivo_crandall, text="INTRODUSCA LA RUTA DE SU ARCHIVO").pack()
+    Label(ventana_Enrutar_archivo_crandall, text="").pack()
+
+    global Ruta_archivo_xlsx
+ 
+    Ruta_archivo_xlsx = StringVar()
+ 
+    global entrada_ruta
+
+    Label(ventana_Enrutar_archivo_crandall, text="NOMBRE USUARIO * ").pack()
+
+    Label(ventana_Enrutar_archivo_crandall, text="").pack()
+    Label(ventana_Enrutar_archivo_crandall, text="RUTA ARCHIVO ").pack()
+    entrada_ruta = Entry(ventana_Enrutar_archivo_crandall, textvariable=Ruta_archivo_xlsx )
+    entrada_ruta.pack()
+    Label(ventana_Enrutar_archivo_crandall, text="").pack()
+    Button(ventana_Enrutar_archivo_crandall, text="OK", width=10, height=1, command = Ruta_archivo).pack()
 
 def Ruta_archivo ():
     g="nose"
